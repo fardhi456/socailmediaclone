@@ -1,0 +1,188 @@
+/* Base layout tweaks */
+body {
+    padding-top: 70px;
+}
+
+#mainNavbar {
+    height: 70px;
+}
+
+#mainNavbar .navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Smooth theme transition */
+body, nav, #searchBarContainer {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.bg-dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+/* Dark mode for card */
+body.bg-dark .card {
+    background-color: #1e1e1e !important;
+    color: #f1f1f1;
+    border-color: #333;
+}
+
+/* Dark mode for form controls */
+body.bg-dark .form-control {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+/* Placeholder text in dark mode */
+body.bg-dark .form-control::placeholder {
+    color: #aaa;
+}
+
+/* Buttons in dark mode */
+body.bg-dark .btn-primary {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+body.bg-dark .btn-primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+body.bg-dark .list-group-item {
+    background-color: #2c2c2c;
+    color: #fff;
+    border-color: #444;
+}
+
+body.bg-dark .list-group-item a {
+    color: #9cdcfe; /* lighter link color */
+}
+
+body.bg-dark .list-group-item a:hover {
+    color: #61dafb; /* hover color */
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 767.98px) {
+
+    /* Navbar brand smaller on mobile */
+    #mainNavbar .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    /* Reduce navbar height to save space */
+    #mainNavbar {
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Navbar nav-items stacked with spacing */
+    #mainNavbar .navbar-nav {
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    #mainNavbar .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Make greeting text smaller and wrap nicely */
+    #usernameGreeting {
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    /* Cards: full width with smaller padding */
+    .card {
+        margin: 1rem 0;
+        padding: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    /* Card header: stack profile picture and username vertically */
+    .card-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem;
+        padding: 1rem !important;
+    }
+
+    .card-header img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    /* Username link smaller font */
+    .card-header a {
+        font-size: 1rem !important;
+        margin-left: 0 !important;
+    }
+
+    /* Post time smaller font, margin reset */
+    .post-time {
+        font-size: 0.8rem !important;
+        margin-left: 0 !important;
+    }
+
+    /* Card body padding smaller */
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Post images scale to full width but keep max height */
+    .card-body img {
+        max-height: 300px !important;
+        width: 100% !important;
+        object-fit: cover;
+    }
+
+    /* Card footer buttons stacked vertically */
+    .card-footer {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem;
+        padding: 1rem !important;
+    }
+
+    /* Button full width on mobile */
+    .card-footer .btn {
+        width: 100% !important;
+        font-size: 1rem !important;
+    }
+
+    /* Collapse comments padding reduced */
+    .collapse .card-body {
+        padding: 1rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Forms and inputs full width */
+    form.d-flex input[type="search"] {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    form.d-flex button {
+        width: 100% !important;
+    }
+
+        /* Make mobile navbar menu solid instead of transparent */
+    .navbar-collapse {
+        background-color: #f8f9fa; /* Light mode background */
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    /* In dark mode */
+    body.bg-dark .navbar-collapse {
+        background-color: #1e1e1e; /* Dark mode background */
+    }
+}
+
+
+
+

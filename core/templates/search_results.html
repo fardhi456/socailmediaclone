@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static humanize %}
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h3>Search Results for "{{ query }}"</h3>
+
+  <!-- Users -->
+  <h5 class="mt-4">Users</h5>
+  {% if user_results %}
+    <ul class="list-group mb-4">
+      {% for user in user_results %}
+      <li class="list-group-item">
+        <a href="{% url 'profile' user.username %}" class="text-decoration-none">
+          {{ user.username }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No users found.</p>
+  {% endif %}
+
+  <!-- Posts -->
+  <h5 class="mt-4">Posts</h5>
+  {% if post_results %}
+    {% for post in post_results %}
+      <div class="card mb-3">
+        <div class="card-header">
+          <a href="{% url 'profile' post.user.username %}">
+            {{ post.user.username }}
+          </a>
+          <span class="text-muted">• {{ post.created_at|naturaltime }}</span>
+        </div>
+        <div class="card-body">
+          <p>{{ post.content|truncatewords:30 }}</p>
+          {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-fluid" alt="Post image">
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No posts found.</p>
+  {% endif %}
+</div>
+{% endblock %}
